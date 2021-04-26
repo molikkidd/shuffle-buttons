@@ -1,2 +1,3 @@
-# shuffle-buttons
-Shuffle buttons on buttons
+# Shuffle Buttons
+
+Way to shuffle buttons using HTML, CSS, and JavaScript
