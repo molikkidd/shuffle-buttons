@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anyroad Buttons</title>
+    <style>
+        .button {
+            display: block;
+            margin: 10px;
+            border-radius: 5px;
+            height: 40px;
+            width: 120px;
+            border-color: transparent;
+        }
+        .shuffle {
+            border-color: #333;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <button class="button"></button>
+    <button class="button"></button>
+    <button class="button"></button>
+    <button class="button"></button>
+    <button class="button"></button>
+    <button class="button"></button>
+    <button class="button"></button>
+    <button class="button shuffle">Shuffle</button>
+    <script>
+        const colors = ['red', 'blue', 'green', 'purple', 'pink', 'yellow', 'orange'];
+        const buttonCollection = document.querySelectorAll('.button');
+        const shuffleButton = document.querySelector('.shuffle');
+        const colorButton = (button, color) => {
+            button.style.backgroundColor = color;
+        } 
+
+        colors.forEach((color, i) => colorButton(buttonCollection[i], color));
+        shuffleButton.addEventListener('click', () => {
+            colors.sort(() => Math.random() - 0.5).forEach((color, i) => {
+                colorButton(buttonCollection[i], color);
+            });
+        });
+    </script>
+</body>
+</html>
